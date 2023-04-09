@@ -1,0 +1,1741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ikigai</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-2mC7o3qPJhuW1rK/beOIQbwhaYkHKa+VKRUsI9gP0sBtFZWw1/ovxPh8+JL/iTUvx1vc71vNQBlfW8A0ntj+A==" crossorigin="anonymous" />
+
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+
+
+</head>
+<body>
+  
+  <nav class="navbar">
+    <button class="hamburger">&#9776;</button>
+    <a href="">HOME</a>
+    <a href="">ABOUT</a>
+    <a class="darkmode-right" id="toggle-theme">DARK MODE</a>
+    <div class="dropdown">
+      <a class="dropdown-btn">LANGUAGES</a>
+      <div class="dropdown-content">
+        <a href="#" class="lang-link" data-lang="en">
+          <img id="english" style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); transform: translateX(-15px);" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg/2560px-Flag_of_the_United_Kingdom_%283-5%29.svg.png" alt="USA flag" width="50" height="30"> 
+          English
+        </a>
+        <a id="japanese" href="#" class="lang-link" data-lang="ja">
+          <img style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); transform: translateX(-15px);" src="https://upload.wikimedia.org/wikipedia/en/thumb/9/9e/Flag_of_Japan.svg/1200px-Flag_of_Japan.svg.png" alt="Japan flag" width="50" height="30">
+          Japanese
+        </a>
+      </div>
+    </div>
+  
+    <script>
+      const htmlElement = document.documentElement;
+      const theme = localStorage.getItem('theme');
+      if (theme === 'dark') {
+        htmlElement.setAttribute('data-theme', 'dark');
+      }
+  
+      const toggleButton = document.getElementById('toggle-theme');
+      const navbar = document.querySelector('.navbar');
+      const navbarLinks = document.querySelectorAll('.navbar a, .dropdown');
+      
+      // Add the "hidden" class to the navbarLinks elements
+      navbarLinks.forEach(link => link.classList.add('hidden'));
+  
+      toggleButton.addEventListener('click', () => {
+        const theme = htmlElement.getAttribute('data-theme');
+        if (theme === 'dark') {
+          htmlElement.setAttribute('data-theme', 'light');
+          localStorage.setItem('theme', 'light');
+        } else {
+          htmlElement.setAttribute('data-theme', 'dark');
+          localStorage.setItem('theme', 'dark');
+        }
+      });
+  
+      navbar.addEventListener('click', function() {
+        this.classList.toggle('active');
+     
+        navbarLinks.forEach(link => link.classList.toggle('hidden'));
+      });
+  
+      navbarLinks.forEach(link => link.addEventListener('click', function(e) {
+        if (navbar.classList.contains('active')) {
+          e.preventDefault();
+          navbar.classList.remove('active');
+
+          navbarLinks.forEach(link => link.classList.add('hidden'));
+        }
+      }));
+
+     
+
+    </script>
+  </nav>
+  
+    <main class="main-presentation" id="m-p">
+      
+      <section class="main-section-1">
+        <div class="slider">
+          <div class="slide active">
+            <img src="https://cdn.shopify.com/s/files/1/0567/5873/0916/files/techwear-jacket_1800x.png?v=1631900851" alt="Image 1">
+          
+          </div>
+          <div class="slide">
+            <img src="https://cdn.shopify.com/s/files/1/0619/2827/6219/products/1_2_Sleeve_Jackets_Techwear_8.jpg?v=1664823619&width=1280" alt="Image 2">
+            
+          </div>
+          <div class="slide">
+            <img src="https://cdn.shopify.com/s/files/1/1673/5051/products/Utility-Strapped-Backpack-streetwear-techwear-6_deec2565-a443-4fc5-92b0-7ba48198cfa9.jpg?v=1661109653" alt="Image 3">
+            
+          </div>
+        </div>
+        <script>
+          const slider = document.querySelector('.slider');
+          const slides = slider.querySelectorAll('.slide');
+          const images = slider.querySelectorAll('img');
+          const texts = slider.querySelectorAll('p');
+          let currentSlide = 0;
+          
+          function showNextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+          }
+          
+          setInterval(showNextSlide, 3000);
+          
+        </script>   
+
+      </section>
+      <!-- <p>Continuity Harmony Power</p>
+            <p id="jp-q">継続 和 力 なり</p>
+          
+          <p>Fall down seven times, get up eight times.</p>
+            <p id="jp-q">七回転んで八回起き上がる。</p>
+          
+            <p>There is good fortune in leftovers.</p>
+            <p id="jp-q">残り物には福がある。</p>
+          -->
+      <section class="main-section-2">
+        <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+          <h1>Ikigai</h1>
+          <h2 style="text-align: center;">passion, vocation, profession <br> and mission</h2>
+          <h3 style="text-align: center;">情熱、天職、職業、使命</h3>
+          <a id="main-button" href="">Shop Now!</a>
+        </div>
+      </section>
+    </main>
+    <section class="quote">
+      <div style="margin: 60px;" class="text-change">
+        <h1 id="change1"></h1>
+        <h2 id="change2"></h2>
+      </div>
+      <script>
+    const headings = [  
+        ["Continuity Harmony Power.", "継続 和 力 なり。"],
+        ["Fall down seven times, get up eight times.", "七回転んで八回起き上がる。"],
+        ["There is good fortune in leftovers.", "残り物には福がある。"]
+    ];
+    let index = 0;
+    function changeHeadings() {
+        document.getElementById("change1").textContent = headings[index][0];
+        document.getElementById("change2").textContent = headings[index][1];
+        index = (index + 1) % headings.length;
+        setTimeout(changeHeadings, 3000);
+    }
+    changeHeadings();
+      </script>
+    </section>
+    
+    
+    </section>
+
+    <section class="carousel-wrap">
+      <section class="carousel-container">
+        <h1 id="selection" class="push-h1"> Our Selection</h1>
+        <div class="carousel" data-flickity='{ "wrapAround": true, "autoHeight": true }'>
+          <div class="carousel-cell second">
+            <figure class="carousel-figure">
+              <div class="carousel-content">
+                <div class="main-text">
+                <h1 id="techwear-tops" class="carousel-subtitle">Techwear Tops</h1>
+                </div>
+                <div class="main-paragraph">
+                <h2 id="paragraph-1" class="carousel-description">Our techwear tops are known for their unique design, affordability, and versatility in style. We take pride in offering exclusive designs that are both functional and fashionable.</h2>
+                </div>
+                <div class="explore pull">
+                  <a id="explore" href="">Explore</a>
+                  </div>
+                <img src="https://www.dhresource.com/0x0/f2/albu/g21/M00/DA/37/rBVaq2EWFiiAXIY7AAB1w-PtySg663.jpg" alt="" class="carousel-image">
+              </div>
+            </figure>
+          </div>
+          <div class="carousel-cell third">
+            <figure class="carousel-figure">
+              <div class="carousel-content">
+                <div class="main-text">
+                <h1 id="techwear-pants" class="carousel-subtitle">Techwear Pants</h1>
+                </div>
+                <div class="main-paragraph">
+                <h2 id="paragraph-2" class="carousel-description">Our techwear pants come in a variety of styles and designs to cater to different preferences and purposes. These pants are made with high-quality materials that are durable.</h2>
+                </div>
+                <div class="explore pull">
+                  <a id="explore2" href="">Explore</a>
+                  </div>
+                <img src="http://cdn.shopify.com/s/files/1/0094/6411/9401/products/BLACKHIGHWAISTMULTIPOCKETSLOOSETECHWEARPANTS.jpg?v=1624271320" alt="" class="carousel-image">
+              </div>
+            </figure>
+          </div>
+          <div class="carousel-cell fourth">
+            <figure class="carousel-figure">
+              <div class="carousel-content">
+                <div class="main-text">
+                <h1 id="techwear-backpacks" class="carousel-subtitle">Techwear Backpacks</h1>
+                </div>
+                <div class="main-paragraph">
+                <h2 id="paragraph-3" class="carousel-description">Our Techwear backpacks are both fashionable and functional, with their sleek design and innovative features. They offer the perfect combination of practicality and style.</h2>
+                </div>
+                <div class="explore pull">
+                  <a id="explore3" href="">Explore</a>
+                  </div>
+                <img src="https://cdn.shopify.com/s/files/1/0526/6623/7082/products/Techwear-Harajuku-Backpack-black_600x.jpg?v=1674487787" alt="" class="carousel-image">
+              </div>
+            </figure>
+          </div>
+          <div class="carousel-cell fifth">
+            <figure class="carousel-figure">
+              <div class="carousel-content">
+                <div class="main-text">
+                <h1 id="techwear-accessories" class="carousel-subtitle">Techwear Accessories</h1>
+                </div>
+                <div class="main-paragraph">
+                <h2 id="paragraph-4" class="carousel-description">Our accessories are designed to complement and enhance our customers' techwear outfits. Our accessories are madewith high-quality materials that are both durable and stylish.</h2>
+                </div>
+                <div class="explore pull">
+                  <a id="explore4" href="">Explore</a>
+                  </div>
+                <img src="https://cdn.shopify.com/s/files/1/0573/4118/2151/products/techwear-sling-bag_600x.jpg?v=1661663495" alt="" class="carousel-image">
+              </div>
+            </figure>
+          </div>
+      </section>
+    </section>
+    
+
+
+
+
+
+    <section class="image-presentation" id="img-p">
+      <section>
+        <h1 id="selection" class="push-h1"> Our Selection</h1>
+        <section class="move" data-flickity='{ "wrapAround": true }'>
+          <div class="carousel-cell first">
+            <figure style="text-align: center; display: flex;">
+              <div class="first-card">
+                <h2 id="paragraph-1">Our techwear tops are known for their unique design, affordability, and versatility in style. We take pride in offering exclusive designs that are both functional and fashionable.</h2>
+                <div class="explore">
+                  <a id="explore" href="">Explore</a>
+                </div>
+              </div>
+              <div class="second-card">
+                <h1 id="techwear-tops">Techwear <br> Tops</h1>
+                <img src="https://www.dhresource.com/0x0/f2/albu/g21/M00/DA/37/rBVaq2EWFiiAXIY7AAB1w-PtySg663.jpg" alt="">
+              </div>
+            </figure>
+          </div>
+    
+          <div class="carousel-cell second">
+            <figure style="text-align: center; display: flex;">
+              <div class="first-card">
+                <h2 id="paragraph-2">Our techwear pants come in a variety of styles and designs to cater to different preferences and purposes. These pants are made with high-quality materials that are durable.</h2>
+                <div class="explore">
+                  <a id="explore2" href="">Explore</a>
+                </div>
+              </div>
+              <div class="second-card">
+                <h1 id="techwear-pants">Techwear <br> Pants</h1>
+                <img src="http://cdn.shopify.com/s/files/1/0094/6411/9401/products/BLACKHIGHWAISTMULTIPOCKETSLOOSETECHWEARPANTS.jpg?v=1624271320" alt="">
+              </div>
+            </figure>
+          </div>
+          <div class="carousel-cell third">
+            <figure style="text-align: center; display: flex;">
+              <div class="first-card">
+                <h2 id="paragraph-3">Our Techwear backpacks are both fashionable and functional, with their sleek design and innovative features. They offer the perfect combination of practicality and style.</h2>
+                <div class="explore">
+                  <a id="explore3" href="">Explore</a>
+                </div>
+              </div>
+              <div class="second-card">
+                <h1 id="techwear-backpacks">Techwear <br> Backpacks</h1>
+                <img src="https://cdn.shopify.com/s/files/1/0526/6623/7082/products/Techwear-Harajuku-Backpack-black_600x.jpg?v=1674487787" alt="">
+              </div>
+            </figure>
+          </div>
+          <div class="carousel-cell fourth">
+            <figure style="text-align: center; display: flex;">
+              <div class="first-card">
+              <h2 id="paragraph-4">Our accessories are designed to complement and enhance our customers' techwear outfits. Our accessories are madewith high-quality materials that are both durable and stylish.</h2>
+                <div class="explore">
+                  <a id="explore4" href="">Explore</a>
+                </div>
+              </div>
+              <div class="second-card">
+                <h1 id="techwear-backpacks">Techwear <br> Accessories</h1>
+                <img src="https://cdn.shopify.com/s/files/1/0573/4118/2151/products/techwear-sling-bag_600x.jpg?v=1661663495" alt="">
+
+              </div>
+            </figure>
+
+
+          </div>
+        </section>
+      </section>
+    </section>
+    <section class="quote">
+      <div style="margin: 60px;" class="text-modify">
+        <h1 id="modify1"></h1>
+        <h2 id="modify2"></h2>
+      </div>
+      <script>
+    const headings3 = [ 
+        ["Perseverance is power.", "継続は力なり。"],
+        ["Good fortune comes to those who smile.", "夢は現実の逆側にある。"],
+        ["Dreams are on the other side of reality.", "残り物には幸運がある。"]
+    ];
+    let index3 = 0;
+    function changeHeadings3() {
+        document.getElementById("modify1").textContent = headings3[index3][0];
+        document.getElementById("modify2").textContent = headings3[index3][1];
+        index3 = (index3 + 1) % headings3.length;
+        setTimeout(changeHeadings3, 3000);
+    }
+    changeHeadings3();
+      </script> 
+    </section>
+
+
+
+
+
+    <section class="mini-card-presentation-bg">
+      <div style="height: 300px;">
+      </div>
+        <section data-aos="fade-right" class="mini-card-bg">
+          <div class="mini-card-first">
+            <div class="mini-text-main">
+
+              <h1 id="info-title-1">Where we're based</h1>
+            </div>
+            <div class="mini-paragraph">
+              <h2 id="info-1">Ikigai© is a Tokyo based techwear clothing company, we make everything from tops to jeans to accessories with a japanese twist, we ship nation wide in japan and in this list of countries</h2>
+            </div>
+          </div>
+          <div class="mini-card-second">
+
+            <img class="mini-image" src="https://live.staticflickr.com/104/309480065_9a8943ffa1_b.jpg" alt="">
+          </div>
+
+        </section>
+        <div style="height: 450px;"></div>
+        <section  data-aos="fade-left" class="mini-card-bg">
+          <div class="mini-card-first">
+            <div class="mini-text-main">
+
+              <h1 id="info-title-2">Garments</h1>
+            </div>
+            <div class="mini-paragraph">
+              <h2 id="info-2">At Ikigai, we create high-performance techwear garments using advanced materials like polyester and nylon for durability, and PrimaLoft for warmth and water-resistance.</h2>
+            </div>
+          </div>
+          <div class="mini-card-second">
+
+            <img class="mini-image" src="https://cdn.shopify.com/s/files/1/0526/6623/7082/articles/H5357d077b01c4ef4a7e950ba522b70f0i_700x.jpg?v=1648396159" alt="">
+          </div>
+
+        </section>
+        <div style="height: 450px;"></div>
+        <section data-aos="fade-right" class="mini-card-bg">
+          <div class="mini-card-first">
+            <div class="mini-text-main">
+
+              <h1 id="info-title-3">Where to find us</h1>
+            </div>
+            <div class="mini-paragraph">
+              <h2 id="info-3">Ikigai has mutliple shops around the world with many in Japan, Europe, and North America, you can find us at 18 different in person shops around the globe if online shopping isnt your thing.</h2>
+            </div>
+          </div>
+          <div class="mini-card-second">
+
+            <img class="mini-image" src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/japan-map-flat-sky-organic-synthesis.jpg" alt="">
+          </div>
+
+        </section>
+    </section>
+    
+    <section class="bg-color-card-presentation">
+
+      <div style="height: 150px;">
+      </div>
+        <section class="card-presentation pushX"  data-aos="fade-left">
+          <section class="card-first-half">
+            <div class="text-card">
+              <div class="white-bg">
+                <h1 id="info-title-1">Where we're based</h1>
+              </div>
+              <h2 id="info-1">Ikigai© is a Tokyo based techwear clothing company, we make everything from tops to jeans to accessories with a japanese twist, we ship nation wide in japan and in this list of countries</h2>
+            
+            </div>
+          </section>
+          <section class="card-second-half">
+            <img src="https://live.staticflickr.com/104/309480065_9a8943ffa1_b.jpg" alt="">
+
+          </section>
+        </section>
+
+
+      <section class="card-presentation pushY"  data-aos="fade-right">
+        <section class="card-second-half">
+          <img src="https://cdn.shopify.com/s/files/1/0526/6623/7082/articles/H5357d077b01c4ef4a7e950ba522b70f0i_700x.jpg?v=1648396159" alt="">
+
+        </section>
+        <section class="card-first-half">
+          <div class="text-card">
+            <div class="white-bg">
+              <h1 id="info-title-2">Garments</h1>
+            </div>
+            <h2 id="info-2">At Ikigai, we create high-performance techwear garments using advanced materials like polyester and nylon for durability, and PrimaLoft for warmth and water-resistance.</h2>
+          
+          </div>
+        </section>
+       
+      </section>
+
+      <section class="card-presentation pushY" data-aos="fade-left">
+       
+        <section class="card-first-half">
+          <div class="text-card">
+            <div class="white-bg">
+              <h1 id="info-title-3">Where to find us</h1>
+            </div>
+            <h2 id="info-3">Ikigai has mutliple shops around the world with many in Japan, Europe, and North America, you can find us at 18 different in person shops around the globe if online shopping isnt your thing.</h2>
+          
+          </div>
+        </section>
+        <section class="card-second-half">
+          <img src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/japan-map-flat-sky-organic-synthesis.jpg" alt="">
+
+        </section>
+      </section>
+    </section>
+  
+    <section class="new-quote">
+      <div  style="margin: 60px;" class="modified-text">
+        <h1 id="new-1"></h1>
+        <h2 id="new-2"></h2>
+      </div>
+      <script>
+        const newHeadings = [
+        ["Fall seven times, stand up eight.", "七転び八起き。"],
+        ["It does not matter how slowly you go as long as you do not stop.", "行く末を憂えず、ただ今の一足を。"],
+        ["A frog in a well knows nothing of the great ocean.", "井の中の蛙大海を知らず。"]
+        ];
+        let newIndex = 0;
+        function changeNewHeadings() {
+          document.getElementById("new-1").textContent = newHeadings[newIndex][0];
+          document.getElementById("new-2").textContent = newHeadings[newIndex][1];
+          newIndex = (newIndex + 1) % newHeadings.length;
+          setTimeout(changeNewHeadings, 3000);
+        }
+        changeNewHeadings();
+      </script> 
+    </section>
+  <div class="card-bg">
+    <div class="intro-toppicks">
+      <h1 id="selection-2">Our top picks of the week</h1>
+    </div>
+    <section class="wear-preview">
+    
+      <div class="background-card" data-aos="fade-up">
+        <div class="first-row">
+          <div style="align-items: center; background-color: #dcdee0; padding: 15px; color: #333; font-family: Mukta-bold; text-align: center; ">
+            <h1 id="tw-pants">Kaga <br class="hide-br"> Pants</h1>
+          </div>
+          <img class="image-set" src="https://cdn.shopify.com/s/files/1/0553/6890/8951/products/Techwear-Cargo-Pants-Kaga-tenshi-streetwear-4_96c96da7-68f5-432c-ba3d-ab251070216b_2000x.jpg?v=1634068112" alt="">
+        </div>
+
+        <div class="second-row">
+          <div style="align-items: center; background-color: #dcdee0; padding: 15px; color: #333; font-family: Mukta-bold; text-align: center; ">
+            <h1 id="tw-jacket">Techwear <br class="hide-br"> Jacket</h1>
+          </div>
+          <img class="image-set" src="https://cdn.shopify.com/s/files/1/0526/6623/7082/products/Techwear-Japanese-Jacket-cyberpunk-blue_600x.jpg?v=1648715063" alt="">
+        </div>
+
+        <div class="third-row">
+          <div style="align-items: center; background-color: #dcdee0; padding: 15px; color: #333; font-family: Mukta-bold; text-align: center; ">
+            <h1 id="tw-backpack">Tenshi <br class="hide-br"> Backpack</h1>
+          </div>
+          <img class="image-set" src="https://cdn.shopify.com/s/files/1/0553/6890/8951/products/Doki-Backpack-tenshi-streetwear-2_e22c08b6-0d08-4ff3-890b-433cbde1f2f3_800x.jpg?v=1636832868" alt="">
+        </div>
+      </div>
+    </section>
+  </div>
+  
+  <div class="split-container">
+   <div data-aos="fade-up" class="center-card">
+      <div class="margin-card-1">
+        <h2>私たちの服は</h2>
+        <h2>Our garments are</h2>
+      </div>
+
+      <div class="margin-card-2">
+        <h2>愛を込めて作られ,</h2>
+        <h2>made with love,</h2>
+      </div>
+
+
+      <div class="margin-card-3">
+        <h2>から イキガイ</h2>
+        <h2>From Ikigai</h2>
+      </div>
+   </div>
+  </div>
+  <footer>
+    <section class="main-footer-background">
+      <section class="footer-card-background">
+        <div class="footer-main-card">
+          <h1 id="aboutUs" class="about-us">About Us</h1>
+          <p id="aboutParagraph">Our company was founded by Hikaru Fujimoto and Sakura Nakamura in 2019. Initially, we started as a backpack company, but due to our success in Japan, we have expanded our product line to include pants, tops, and accessories. Now, we ship to North America, Europe, and many other areas.</p>
+          <h1 id="ship" class="shipping">Where we ship :</h1>
+          <div class="shipping-container">
+            <ul id="shipping-list-eu" class="shipping-list">
+              <li id="europe" style="padding-bottom: 10px;">Europe:</li>
+              <li id="unitedKingdom">United Kingdom</li>
+              <li id="ireland">Ireland</li>
+              <li id="france">France</li>
+              <li id="germany">Germany</li>
+              <li id="czechia">Czechia</li>
+              <li id="spain">Spain</li>
+              <li id="portugal">Portugal</li>
+              <li id="switzerland">Switzerland</li>
+              <li id="italy">Italy</li>
+              <li id="sweden">Sweden</li>
+              <li id="denmark">Denmark</li>
+              <li id="norway">Norway</li>
+              <li id="finland">Finland</li>
+            </ul>
+            
+            <ul class="shipping-list">
+              <li id="asia" style="padding-bottom: 10px;">Asia:</li>
+              <li id="japan">Japan</li>
+              <li id="southKorea">South Korea</li>
+              <li id="china">China</li>
+              <li id="taiwan">Taiwan</li>
+              <li id="singapore">Singapore</li>
+              <li id="malaysia">Malaysia</li>
+              <li id="thailand">Thailand</li>
+              <li id="indonesia">Indonesia</li>
+              <li id="uae">UAE</li>
+              <li id="qatar">Qatar</li>
+              <li id="kuwait">Kuwait</li>
+              <li id="israel">Israel</li>
+              <li id="saudiArabia">Saudi Arabia</li>
+            </ul>
+            
+            <ul class="shipping-list">
+              <li id="northAmerica" style="padding-bottom: 10px;">North America:</li>
+              <li id="usa">USA</li>
+              <li id="canada">Canada</li>
+              <li id="mexico">Mexico</li>
+
+              <li id="oceania" style="padding-bottom: 10px; padding-top: 20px;">Oceania</li>
+              <li id="australia">Australia</li>
+              <li id="newZealand">New Zealand</li>
+            </ul>
+            
+
+        
+        </div>
+
+        
+      </section>
+      <section class="footer-card-background-2">
+        <div class="footer-second-card">
+          <h1 id="offices" class="offices">Our Offices</h1>
+          <p id="office-location">Located in Shibuya part of Tokyo.</p>
+          <iframe class="office-settings" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1051.1615319103!2d139.7000555458071!3d35.66427586184948!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188d9ab41038a9%3A0xd5ec5981a0de4a66!2zS0RY44Os44K444OH44Oz44K55riL6LC356We5Y2X!5e0!3m2!1sen!2smk!4v1679250255433!5m2!1sen!2smk" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <section class="footer-third-card">
+          <div class="footer-third-card-dark">
+            <div class="social-icons">
+              <i class="fa fa-instagram"></i>
+              <i class="fa fa-twitter"></i>
+              <i class="fa fa-facebook"></i>
+              <i class="fa fa-youtube"></i>
+            </div>
+        </section>
+      </section>
+
+    </section>
+
+  </footer>
+
+
+
+
+    <script>
+      const languages = {
+        en: {
+          home: 'HOME',
+          about: 'ABOUT',
+          darkMode: 'DARK MODE',
+          languages: 'LANGUAGES',
+          japanese: 'Japanese',
+          english: 'English',
+          ikigai: 'Ikigai',
+          passion: 'passion, vocation, profession and mission',
+          jpIkigai: '情熱、天職、職業、使命',
+          shopNow: 'Shop Now!',
+          english: 'Englisch',
+
+          selection: 'Our Selection',
+
+          tech_tops: 'Techwear Tops',
+          tech_pnts: 'Techwear Pants',
+          tech_back: 'Techwear Backpacks',
+          tech_acce: 'Techwear Accessories',
+
+          explore: 'Explore',
+          explore2: 'Explore',
+          explore3: 'Explore',
+          explore4: 'Explore',
+
+
+
+          paragraph1: 'Our techwear tops are known for their unique design, affordability, and versatility in style. We take pride in offering exclusive designs that are both functional and fashionable.',
+          paragraph2: 'Our techwear pants come in a variety of styles and designs to cater to different preferences and purposes. These pants are made with high-quality materials that are durable.',
+          paragraph3: 'Our Techwear backpacks are both fashionable and functional, with their sleek design and innovative features. They offer the perfect combination of practicality and style, making them a popular choice.',
+          paragraph4: 'Our techwear accessories are designed to complement and enhance our customers techwear outfits. These accessories are made with advanced materials and technology to provide practicality',
+        
+          info_title1: "Where we're based",
+          info_title2: 'Garments',
+          info_title3: 'Where to find us',
+
+          info1: 'Ikigai© is a Tokyo based techwear clothing company, we make everything from tops to jeans to accessories with a japanese twist, we ship nation wide in japan and in this list of countries',
+          info2: 'At Ikigai, we create high-performance techwear garments using advanced materials like polyester and nylon for durability, and PrimaLoft for warmth and water-resistance.',
+          info3: 'Ikigai has mutliple shops around the world with many in Japan, Europe, and North America, you can find us at 18 different in person shops around the globe if online shopping isnt your thing.',
+
+          selection_2: 'Our top picks of the week',
+
+          tw_pants: 'Kaga Techwear Pants',
+          tw_jacket: 'Techwear Jacket',
+          tw_backpack: 'Tenshi Backpack',
+
+          aboutUs: 'About Us',
+          aboutParagraph: 'Our company was founded by Hikaru Fujimoto and Sakura Nakamura in 2019. Initially, we started as a backpack company, but due to our success in Japan, we have expanded our product line to include pants, tops, and accessories. Now, we ship to North America, Europe, and many other areas.',
+
+          ship: 'Where we ship:',
+
+          unitedKingdom: 'United Kingdom',
+          ireland: 'Ireland',
+          france: 'France',
+          germany: 'Germany',
+          czechia: 'Czechia',
+          spain: 'Spain',
+          portugal: 'Portugal',
+          switzerland: 'Switzerland',
+          italy: 'Italy',
+          sweden: 'Sweden',
+          denmark: 'Denmark',
+          norway: 'Norway',
+          finland: 'Finland',
+          japan: 'Japan',
+          southKorea: 'South Korea',
+          china: 'China',
+          taiwan: 'Taiwan',
+          singapore: 'Singapore',
+          malaysia: 'Malaysia',
+          thailand: 'Thailand',
+          indonesia: 'Indonesia',
+          uae: 'UAE',
+          qatar: 'Qatar',
+          kuwait: 'Kuwait',
+          israel: 'Israel',
+          saudiArabia: 'Saudi Arabia',
+          usa: 'USA',
+          canada: 'Canada',
+          mexico: 'Mexico',
+          australia: 'Australia',
+          newZealand: 'New Zealand',
+
+
+
+          europe: 'Europe',
+          northAmerica: 'North America',
+          oceania: 'Oceania',
+          asia: 'Asia'
+
+        },
+        ja: {
+          home: 'ホーム',
+          about: '紹介',
+          darkMode: 'ダークモード',
+          languages: '言語',
+          ikigai: '生き甲斐',
+          passion: '情熱、天職、職業、使命',
+          jpIkigai: '全都道府県に配送しています。',
+          shopNow: '今すぐショップへ',
+
+          selection: '私たちのセレクション',
+
+          tech_tops: 'テックウェア トップス',
+          tech_pnts: 'テックウェアのパンツ',
+          tech_back: 'テックウェアのバックパック',
+          tech_acce: 'テックウェアアクセサリー',
+
+
+          explore: 'エクスプロア',
+          explore2: 'エクスプロア',
+          explore3: 'エクスプロア',
+          explore4: 'エクスプロア',
+
+          paragraph1: '当社のテックウェアトップスは、ユニークなデザイン、手頃な価格、スタイルの多様性で機能的かつファッショナブルです。',
+          paragraph2: '当社のテックウェア パンツは、耐久性に優れた上質な素材を使用し、多様なスタイルとデザインで好みや目的に合わせられます。',
+          paragraph3: '私たちのテックウェアのバックパックは、スリークで革新的なデザインで機能的かつファッショナブルです',
+          paragraph4: '当社のテックウェア アクセサリーは、お客様のテックウェアを補完し、強化するために作られました。高度な素材と技術で実用性を提供します',
+
+
+
+          info_title1: "私たちの拠点",
+          info_title2: '服装',
+          info_title3: '私たちを見つける場所',
+
+          info1: '生き甲斐© は東京を拠点とするテックウェアの衣料品会社です。トップスからジーンズ、アクセサリーまで、日本のひねりを加えたすべてのものを製造しています。',
+          info2: '生き甲斐 では、ポリエステルやナイロンなどの高度な素材を使用して耐久性を高め、プリマロフト を使用して保温性と防水性を高めた高性能なテックウェアを製造しています。',
+          info3: '生き甲斐 は世界中に複数の店舗を持ち、その多くは日本、ヨーロッパ、北米にあり、オンライン ショッピングが苦手な場合は、世界中の 18 の店舗で見つけることができます。',
+
+
+          selection_2: '今週のおすすめ',
+
+          tw_pants: '加賀テックウェアパンツ',
+          tw_jacket: 'テックウェアジャケット',
+          tw_backpack: ' 天使バックパック',
+
+          aboutUs: '私たちについて',
+          aboutParagraph: '弊社は 二千十九 年に、藤本光と中村さくらによって創業されました。当初はバックパック会社としてスタートしましたが、日本での成功を受けて、パンツ、トップス、アクセサリーを含む製品ラインを拡大しました。現在では、北アメリカ、ヨーロッパ、その他多くの地域に出荷しています。',
+        
+          ship: '発送地域 :',
+
+   
+          unitedKingdom: '英国',
+          ireland: 'アイルランド',
+          france: 'フランス',
+          germany: 'ドイツ',
+          czechia: 'チェコ',
+          spain: 'スペイン',
+          portugal: 'ポルトガル',
+          switzerland: 'スイス',
+          italy: 'イタリア',
+          sweden: 'スウェーデン',
+          denmark: 'デンマーク',
+          norway: 'ノルウェー',
+          finland: 'フィンランド',
+          japan: '日本',
+          southKorea: '韓国',
+          china: '中国',
+          taiwan: '台湾',
+          singapore: 'シンガポール',
+          malaysia: 'マレーシア',
+          thailand: 'タイ',
+          indonesia: 'インドネシア',
+          uae: 'アラブ首長国連邦',
+          qatar: 'カタール',
+          kuwait: 'クウェート',
+          israel: 'イスラエル',
+          saudiArabia: 'サウジアラビア',
+          usa: 'アメリカ合衆国',
+          canada: 'カナダ',
+          mexico: 'メキシコ',
+          australia: 'オーストラリア',
+          newZealand: 'ニュージーランド',
+
+
+          europe: 'ヨーロッパ',
+          northAmerica: '北アメリカ',
+          oceania: 'オセアニア',
+          asia: 'アジア',
+   
+
+          offices: '私たちのオフィス',
+          office_location: '東京都渋谷区に位置しています。'
+        }
+        
+      };
+      
+
+      
+      const homeLink = document.getElementsByTagName('nav')[0].getElementsByTagName('a')[0];
+      const aboutLink = document.getElementsByTagName('nav')[0].getElementsByTagName('a')[1];
+      const darkModeBtn = document.getElementById('toggle-theme');
+      const langDropdown = document.querySelector('.dropdown');
+      const langLinks = document.querySelectorAll('.lang-link');
+      const ikigaiTitle = document.getElementsByTagName('h1')[0];
+      const ikigaiSubtitle = document.getElementsByTagName('h2')[0];
+      const ikigaiSubtitleJp = document.getElementsByTagName('h3')[0];
+      const shopNowBtn = document.getElementById('main-button');
+
+      const selection = document.getElementById('selection');
+      const selectionJapan = document.getElementById('selection');
+
+
+      const paragraph1 = document.getElementById('paragraph-1');
+      const paragraph1Japan = document.getElementById('paragraph-1');
+      const paragraph2 = document.getElementById('paragraph-2');
+      const paragraph2Japan = document.getElementById('paragraph-2');
+      const paragraph3 = document.getElementById('paragraph-3');
+      const paragraph3Japan = document.getElementById('paragraph-3');
+      const paragraph4 = document.getElementById('paragraph-4');
+      const paragraph4Japan = document.getElementById('paragraph-4');
+
+    
+
+      const techwearTops = document.getElementById('techwear-tops');
+      const techwearPants = document.getElementById('techwear-pants');
+      const techwearBackpacks = document.getElementById('techwear-backpacks');
+      const techwearAccessories = document.getElementById('techwear-accessories');     
+
+      const techwearTopsJapan = document.getElementById('techwear-tops');
+      const techwearPantsJapan = document.getElementById('techwear-pants');
+      const techwearBackpacksJapan = document.getElementById('techwear-backpacks');
+      const techwearAccessoriesJapan = document.getElementById('techwear-accessories');
+
+
+
+      const explore = document.getElementById('explore');
+      const explore2 = document.getElementById('explore2');
+      const explore3 = document.getElementById('explore3');
+      const explore4 = document.getElementById('explore4');
+
+      const exploreJapan = document.getElementById('explore');
+      const explore2Japan = document.getElementById('explore2');
+      const explore3Japan = document.getElementById('explore3');
+      const explore4Japan = document.getElementById('explore4');
+
+      const info1 = document.getElementById('info-1');
+      const info2 = document.getElementById('info-2');
+      const info3 = document.getElementById('info-3');
+      const info1Japan = document.getElementById('info-1');
+      const info2Japan = document.getElementById('info-2');
+      const info3Japan = document.getElementById('info-3');
+
+      const info1Title = document.getElementById('info-title-1');
+      const info2Title = document.getElementById('info-title-2');
+      const info3Title = document.getElementById('info-title-3');
+      const info1TitleJapan = document.getElementById('info-title-1');
+      const info2TitleJapan = document.getElementById('info-title-2');
+      const info3TitleJapan = document.getElementById('info-title-3');
+
+      const selection2 = document.getElementById('selection-2');
+      const selection2Japan = document.getElementById('selection-2');
+
+
+      const techwearKagaPants = document.getElementById('tw-pants');
+      const techwearKagaPantsJapan = document.getElementById('tw-pants');
+
+      const techwearJacket = document.getElementById('tw-jacket');
+      const techwearJacketJapan = document.getElementById('tw-jacket');     
+
+      const techwearBackpack = document.getElementById('tw-backpack');
+      const techwearBackpackJapan = document.getElementById('tw-backpack');   
+
+      const aboutUs = document.getElementById('aboutUs');
+      const aboutUsJapan = document.getElementById('aboutUs');
+      
+      const aboutParagraph = document.getElementById('aboutParagraph');
+      const aboutParagraphJapan = document.getElementById('aboutParagraph');
+      
+      const shipping = document.getElementById('ship');
+      const shippingJapan = document.getElementById('ship');
+
+  
+      const unitedKingdom = document.getElementById('unitedKingdom');
+      const unitedKingdomJapan = document.getElementById('unitedKingdom');
+      const ireland = document.getElementById('ireland');
+      const irelandJapan = document.getElementById('ireland');
+      const france = document.getElementById('france');
+      const franceJapan = document.getElementById('france');
+      const germany = document.getElementById('germany');
+      const germanyJapan = document.getElementById('germany');
+      const czechia = document.getElementById('czechia');
+      const czechiaJapan = document.getElementById('czechia');
+      const spain = document.getElementById('spain');
+      const spainJapan = document.getElementById('spain');
+      const portugal = document.getElementById('portugal');
+      const portugalJapan = document.getElementById('portugal');
+      const switzerland = document.getElementById('switzerland');
+      const switzerlandJapan = document.getElementById('switzerland');
+      const italy = document.getElementById('italy');
+      const italyJapan = document.getElementById('italy');
+      const sweden = document.getElementById('sweden');
+      const swedenJapan = document.getElementById('sweden');
+      const denmark = document.getElementById('denmark');
+      const denmarkJapan = document.getElementById('denmark');
+      const norway = document.getElementById('norway');
+      const norwayJapan = document.getElementById('norway');
+      const finland = document.getElementById('finland');
+      const finlandJapan = document.getElementById('finland');
+      const japan = document.getElementById('japan');
+      const japanJapan = document.getElementById('japan');
+      const southKorea = document.getElementById('southKorea');
+      const southKoreaJapan = document.getElementById('southKorea');
+      const china = document.getElementById('china');
+      const chinaJapan = document.getElementById('china');
+      const taiwan = document.getElementById('taiwan');
+      const taiwanJapan = document.getElementById('taiwan');
+      const singapore = document.getElementById('singapore');
+      const singaporeJapan = document.getElementById('singapore');
+      const malaysia = document.getElementById('malaysia');
+      const malaysiaJapan = document.getElementById('malaysia');
+      const thailand = document.getElementById('thailand');
+      const thailandJapan = document.getElementById('thailand');
+      const indonesia = document.getElementById('indonesia');
+      const indonesiaJapan = document.getElementById('indonesia');
+      const uae = document.getElementById('uae');
+      const uaeJapan = document.getElementById('uae');
+      const qatar = document.getElementById('qatar');
+      const qatarJapan = document.getElementById('qatar');
+      const kuwait = document.getElementById('kuwait');
+      const kuwaitJapan = document.getElementById('kuwait');
+      const israel = document.getElementById('israel');
+      const israelJapan = document.getElementById('israel');
+      const saudiArabia = document.getElementById('saudiArabia');
+      const saudiArabiaJapan = document.getElementById('saudiArabia');
+      const usa = document.getElementById('usa');
+      const usaJapan = document.getElementById('usa');
+      const canada = document.getElementById('canada');
+      const canadaJapan = document.getElementById('canada');
+      const mexico = document.getElementById('mexico');
+      const mexicoJapan = document.getElementById('mexico');
+      const australia = document.getElementById('australia');
+      const australiaJapan = document.getElementById('australia');
+      const newZealand = document.getElementById('newZealand');
+      const newZealandJapan = document.getElementById('newZealand');
+
+
+
+      const europe = document.getElementById('europe');
+      const europeJapan = document.getElementById('europe');
+      const asia = document.getElementById('asia');
+      const asiaJapan = document.getElementById('asia');
+      const oceania = document.getElementById('oceania');
+      const oceaniaJapan = document.getElementById('oceania');
+      const northAmerica = document.getElementById('northAmerica');
+      const northAmericaJapan = document.getElementById('northAmerica');
+
+      const ourOffices = document.getElementById('offices');
+      const ourOfficesJapan = document.getElementById('offices');
+      const officeLocation = document.getElementById('office-location');
+      const officeLocationJapan = document.getElementById('office-location');
+
+      
+
+      
+      function changeLanguage(lang) {
+
+        homeLink.textContent = languages[lang].home;
+        aboutLink.textContent = languages[lang].about;
+        darkModeBtn.textContent = languages[lang].darkMode;
+        langDropdown.firstElementChild.textContent = languages[lang].languages;
+        langLinks[0].lastElementChild.textContent = languages[lang].english;
+        langLinks[1].lastElementChild.textContent = languages[lang].japanese;
+        ikigaiTitle.textContent = languages[lang].ikigai;
+        ikigaiSubtitle.textContent = languages[lang].passion;
+        ikigaiSubtitleJp.textContent = languages[lang].jpIkigai;
+        shopNowBtn.textContent = languages[lang].shopNow;
+
+        selection.textContent = languages[lang].selection;
+        selectionJapan.textContent = languages[lang].selection;
+
+        paragraph1.textContent = languages[lang].paragraph1;
+        paragraph1Japan.textContent = languages[lang].paragraph1;
+        paragraph2.textContent = languages[lang].paragraph2;
+        paragraph2Japan.textContent = languages[lang].paragraph2;
+        paragraph3.textContent = languages[lang].paragraph3;
+        paragraph3Japan.textContent = languages[lang].paragraph3;
+        paragraph4.textContent = languages[lang].paragraph4;
+        paragraph4Japan.textContent = languages[lang].paragraph4;
+
+        techwearTops.textContent = languages[lang].tech_tops;
+        techwearPants.textContent = languages[lang].tech_pnts
+        techwearBackpacks.textContent = languages[lang].tech_back;
+        techwearAccessories.textContent = languages[lang].tech_acce;
+
+
+        techwearTopsJapan.textContent = languages[lang].tech_tops;
+        techwearPantsJapan.textContent = languages[lang].tech_pnts
+        techwearBackpacksJapan.textContent = languages[lang].tech_back;
+        techwearAccessoriesJapan.textContent = languages[lang].tech_acce;
+
+        explore.textContent = languages[lang].explore;
+        explore2.textContent = languages[lang].explore2;
+        explore3.textContent = languages[lang].explore3;
+        explore4.textContent = languages[lang].explore4;
+
+        exploreJapan.textContent = languages[lang].explore;
+        explore2Japan.textContent = languages[lang].explore2;
+        explore3Japan.textContent = languages[lang].explore3;
+        explore4Japan.textContent = languages[lang].explore4;
+
+        info1.textContent = languages[lang].info1;
+        info2.textContent = languages[lang].info2;
+        info3.textContent = languages[lang].info3;
+        info1Japan.textContent = languages[lang].info1;
+        info2Japan.textContent = languages[lang].info2;
+        info3Japan.textContent = languages[lang].info3;
+
+        info1Title.textContent = languages[lang].info_title1;
+        info2Title.textContent = languages[lang].info_title2;
+        info3Title.textContent = languages[lang].info_title3;
+        info1TitleJapan.textContent = languages[lang].info_title1;
+        info2TitleJapan.textContent = languages[lang].info_title2;
+        info3TitleJapan.textContent = languages[lang].info_title3;
+
+        selection2.textContent = languages[lang].selection_2;
+        selection2Japan.textContent = languages[lang].selection_2;
+
+
+        techwearKagaPants.textContent = languages[lang].tw_pants;
+        techwearKagaPantsJapan.textContent = languages[lang].tw_pants;
+
+        techwearJacket.textContent = languages[lang].tw_jacket;
+        techwearJacketJapan.textContent = languages[lang].tw_jacket;
+
+
+        techwearBackpack.textContent = languages[lang].tw_backpack;
+        techwearBackpackJapan.textContent = languages[lang].tw_backpack;
+
+
+        aboutUs.textContent = languages[lang].aboutUs;
+        aboutUs.textContent = languages[lang].aboutUs;
+
+
+        aboutParagraph.textContent = languages[lang].aboutParagraph;
+        aboutParagraphJapan.textContent = languages[lang].aboutParagraph;
+
+        
+        shipping.textContent = languages[lang].ship;
+        shippingJapan.textContent = languages[lang].ship;
+
+
+        unitedKingdom.textContent = languages[lang].unitedKingdom;
+        unitedKingdomJapan.textContent = languages[lang].unitedKingdom;
+        ireland.textContent = languages[lang].ireland;
+        irelandJapan.textContent = languages[lang].ireland;
+        france.textContent = languages[lang].france;
+        franceJapan.textContent = languages[lang].france;
+        germany.textContent = languages[lang].germany;
+        germanyJapan.textContent = languages[lang].germany;
+        czechia.textContent = languages[lang].czechia;
+        czechiaJapan.textContent = languages[lang].czechia;
+        spain.textContent = languages[lang].spain;
+        spainJapan.textContent = languages[lang].spain;
+        portugal.textContent = languages[lang].portugal;
+        portugalJapan.textContent = languages[lang].portugal;
+        switzerland.textContent = languages[lang].switzerland;
+        switzerlandJapan.textContent = languages[lang].switzerland;
+        italy.textContent = languages[lang].italy;
+        italyJapan.textContent = languages[lang].italy;
+        sweden.textContent = languages[lang].sweden;
+        swedenJapan.textContent = languages[lang].sweden;
+        denmark.textContent = languages[lang].denmark;
+        denmarkJapan.textContent = languages[lang].denmark;
+        norway.textContent = languages[lang].norway;
+        norwayJapan.textContent = languages[lang].norway;
+        finland.textContent = languages[lang].finland;
+        finlandJapan.textContent = languages[lang].finland;
+
+        japan.textContent = languages[lang].japan;
+        japanJapan.textContent = languages[lang].japan;
+        southKorea.textContent = languages[lang].southKorea;
+        southKoreaJapan.textContent = languages[lang].southKorea;
+        china.textContent = languages[lang].china;
+        chinaJapan.textContent = languages[lang].china;
+        taiwan.textContent = languages[lang].taiwan;
+        taiwanJapan.textContent = languages[lang].taiwan;
+        singapore.textContent = languages[lang].singapore;
+        singaporeJapan.textContent = languages[lang].singapore;
+        malaysia.textContent = languages[lang].malaysia;
+        malaysiaJapan.textContent = languages[lang].malaysia;
+        thailand.textContent = languages[lang].thailand;
+        thailandJapan.textContent = languages[lang].thailand;
+        indonesia.textContent = languages[lang].indonesia;
+        indonesiaJapan.textContent = languages[lang].indonesia;
+        uae.textContent = languages[lang].uae;
+        uaeJapan.textContent = languages[lang].uae;
+        qatar.textContent = languages[lang].qatar;
+        qatarJapan.textContent = languages[lang].qatar;
+        kuwait.textContent = languages[lang].kuwait;
+        kuwaitJapan.textContent = languages[lang].kuwait;
+        israel.textContent = languages[lang].israel;
+        israelJapan.textContent = languages[lang].israel;
+        saudiArabia.textContent = languages[lang].saudiArabia;
+        saudiArabiaJapan.textContent = languages[lang].saudiArabia;
+
+        usa.textContent = languages[lang].usa;
+        usaJapan.textContent = languages[lang].usa;
+        canada.textContent = languages[lang].canada;
+        canadaJapan.textContent = languages[lang].canada;
+        mexico.textContent = languages[lang].mexico;
+        mexicoJapan.textContent = languages[lang].mexico;
+
+        australia.textContent = languages[lang].australia;
+        australiaJapan.textContent = languages[lang].australia;
+
+        newZealand.textContent = languages[lang].newZealand;
+        newZealandJapan.textContent = languages[lang].newZealand;
+
+
+        europe.textContent = languages[lang].europe;
+        europeJapan.textContent = languages[lang].europe;
+
+        northAmerica.textContent = languages[lang].northAmerica;
+        northAmericaJapan.textContent = languages[lang].northAmerica;
+
+        oceania.textContent = languages[lang].oceania;
+        oceaniaJapan.textContent = languages[lang].oceania;
+
+        asia.textContent = languages[lang].asia;
+        asiaJapan.textContent = languages[lang].asia;
+
+        ourOffices.textContent = languages[lang].offices;
+        ourOfficesJapan.textContent = languages[lang].offices;
+
+        officeLocation.textContent = languages[lang].office_location;
+        officeLocationJapan.textContent = languages[lang].office_location;
+
+
+        
+
+
+
+
+      }
+
+      
+      // Add the event listeners to the language links
+      langLinks.forEach(function(langLink) {
+        langLink.addEventListener('click', function(event) {
+          event.preventDefault();
+          const lang = event.target.dataset.lang;
+          changeLanguage(lang);
+        });
+      });
+      
+      </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+  // your javascript code
+
+  AOS.init({
+            offset: 400,
+            duration: 1000
+        });
+});
+    </script>
+
+</body>
+</html>
+
+  <!--  
+  <a href="">HOME</a>
+  <a href="">ABOUT</a>
+  <a class="darkmode-right" id="toggle-theme">DARK MODE</a>
+  <div class="dropdown">
+    <a class="dropdown-btn">LANGUAGES</a>
+    <div class="dropdown-content">
+      <span style="display: flex; align-items: center;">
+        <img id="english" style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); margin-right: 2px; margin-left: 2px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg/2560px-Flag_of_the_United_Kingdom_%283-5%29.svg.png" alt="USA flag" width="50" height="30"> 
+        <a href="#" class="lang-link" data-lang="en">
+          English
+        </a>
+      </span>
+      <span style="display: flex; align-items: center;">
+        <img style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); margin-right: 2px; margin-left: 2px;" src="https://upload.wikimedia.org/wikipedia/en/thumb/9/9e/Flag_of_Japan.svg/1200px-Flag_of_Japan.svg.png" alt="Japan flag" width="50" height="30">
+        <a  style="margin-right:" id="japanese" href="#" class="lang-link" data-lang="ja">
+          Japanese
+        </a>
+      </span>
+    </div>
+  </div>    -->
+
+
+  <!-- @media (max-width: 500px) and (min-width: 350px) {
+  nav {
+    padding: 12px;
+  }
+  nav a {
+    margin: 25px;
+    font-family: Mukta-Bold;
+    font-size: 22px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+  }
+  .dropdown {
+    display: block;
+    margin: 0 auto;
+    width: 100%; /* Set a fixed width for the dropdown */
+    height: 100px;
+  }
+  
+  .dropdown a {
+    display: block;
+    
+  }
+
+
+.dropdown-btn {
+  white-space: nowrap; /* Prevent the text from wrapping */
+  overflow: hidden; /* Hide the text that exceeds the container width */
+  text-overflow: ellipsis; /* Add an ellipsis to indicate truncated text */
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  background-color: var(--background-color);
+  min-width: 180px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  width: 100%; /* Set the width to 100% to fill the dropdown container */
+}
+
+.dropdown-content a {
+  color: var(--text-color);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  white-space: nowrap; /* Prevent the text from wrapping */
+  overflow: hidden; /* Hide the text that exceeds the container width */
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.hamburger:hover {
+  background-color: #505357;
+  display: flex;
+  align-items: center;
+}
+  .hamburger {
+    display: block;
+    position: relative;
+    top: -10px;
+    right: -10px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+  }
+
+  /* Add styles for the hamburger icon */
+.hamburger span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 25px;
+  background-color: var(--text-color);
+  border-radius: 3px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: 0.25s ease-in-out;
+  }
+  
+  .hamburger span:nth-child(1) {
+  top: 0;
+  }
+  
+  .hamburger span:nth-child(2),
+  .hamburger span:nth-child(3) {
+  top: 10px;
+  }
+  
+  .hamburger span:nth-child(4) {
+  top: 20px;
+  }
+  
+  /* Add styles for the hamburger icon when active */
+  .hamburger.active span:nth-child(1) {
+  transform: rotate(45deg);
+  top: 11px;
+  left: 8px;
+  }
+  
+  .hamburger.active span:nth-child(2) {
+  transform: rotate(45deg);
+  opacity: 0;
+  }
+  
+  .hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg);
+  opacity: 0;
+  }
+  
+  .hamburger.active span:nth-child(4) {
+  transform: rotate(-45deg);
+  top: 11px;
+  left: 8px;
+  }
+  
+  .dropdown-content.visible {
+    display: block;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+ .slider img {
+  box-shadow: 10px 18px 35px rgba(0, 0, 0, 0.5), 0 10px 10px rgba(0, 0, 0, 0.22);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  height: 65%;
+}
+
+.main-section-1 {
+  width: 100%;
+  height: 70%;
+  border: 0px solid rgb(140, 140, 140);
+}
+  
+  #jp-q {
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 20px;
+      color: #9b9595;
+      font-size: 18px;
+      text-align: center;
+  }
+  
+  .main-presentation {
+      height: 1200px;
+      width: 100%;
+      background-color: #f3eded;
+  }
+  
+  .main-section-1 {
+      display: flex;
+      width:100%;
+      height: 60%;
+      border: 0px solid rgb(140, 140, 140);
+  }
+  
+  .main-section-2 {
+    transform: translateY(-240px);
+      width: 100%;
+      height: 70%;
+      border: 0px solid rgb(140, 140, 140);
+  }
+    
+  .main-section-2 h1 {
+      color: #333;
+      font-family: Mukta-Bold;
+      font-size: 4.5em;
+  }
+  
+      
+  .main-section-2 h2 {
+    margin: 40px;
+    transform: translateY(-50px);
+      font-family: Mukta-ExtraLight;
+      font-weight: bolder;
+      font-size: 1.8em;
+      color: #333;
+  }
+  
+  .main-section-2 h3 {
+    transform: translateY(-50px);
+      font-family: Mukta-ExtraLight;
+      font-weight: bolder;
+      font-size: 1.6em;
+      color: #9b9595;
+  }
+
+  .image-presentation {
+    box-shadow: 10px 18px 35px rgba(0, 0, 0, 0.5) 0px 10px 10px rgba(100, 0, 5, 15);
+    background-color: #f3eded;
+    height: 1000px;
+    width: 100%;
+    padding-top: 50px;
+  
+  }
+  .push-h1 {
+    margin: 0;
+    font-family: mukta-bold; font-size: 35px; color: #333; text-align: center;
+  }
+  
+
+  #selection-2 {
+    margin: 0;
+    font-family: mukta-bold; font-size: 35px; text-align: center;
+  }
+  
+  
+  .mySlides img {
+    background-image:
+      linear-gradient(
+          rgba(0, 0, 0, 0.45), 
+          rgba(0, 0, 0, 0.45)
+        ),
+  }
+  
+  
+
+  .first {
+    margin-top: 150px;
+    margin-bottom: 150px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    background-color: #fff;
+    background-size: cover;
+    color: #fff;
+    font-size: 30px;
+    font-family: mukta-bold;
+  }
+  
+  .second {
+    margin-top: 150px;
+    margin-bottom: 150px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    background-color: #fff;
+    background-size: cover;
+    color: #fff;
+    font-size: 30px;
+    font-family: mukta-bold;
+  }
+  
+  .third {
+    margin-top: 150px;
+    margin-bottom: 150px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    background-color: #fff;
+    background-size: cover;
+    color: #fff;
+    font-size: 30px;
+    font-family: mukta-bold;
+  }
+  
+  .fourth {
+    margin-top: 150px;
+    margin-bottom: 150px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    background-color: #fff;
+    background-size: cover;
+    color: #fff;
+    font-size: 30px;
+    font-family: mukta-bold;
+  }
+  
+  .fifth {
+    margin-top: 150px;
+    margin-bottom: 150px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    background-color: #fff;
+    background-size: cover;
+    color: #fff;
+    font-size: 30px;
+    font-family: mukta-bold;
+  }
+  .mySlides {
+    height: 1000px;
+  }
+  .flickity-prev-next-button {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    margin-top: 18px; /* Half of the button height */
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    user-select: none;
+    border-radius: 0;
+  }
+  
+  .flickity-prev-next-button.previous {
+    left: 0;
+  }
+  
+  .flickity-prev-next-button.next {
+    right: 0;
+  }
+    
+  .carousel-cell:before{
+    display: block;
+    text-align: center;
+    line-height: 200px;
+    font-size: 18px;
+  }
+  figure {
+    transform: translateY(80px);
+  }
+  .carousel-cell {
+      width: 100%;
+      height: 400px;
+      margin-right: 400px;
+      margin-bottom: 100px;
+      box-shadow: 10px 18px 35px rgba(0, 0, 0, 0.5), 0px 10px 10px rgba(0, 0, 0, 0.22);
+  
+    }
+    .flickity-page-dots {
+      display: none;
+    }
+
+
+    .first-card {
+      width: 50%;
+      height: 500px;
+      background-color: #505357;
+    }
+
+    .first-card h2 {
+      margin: 22.5px;
+      font-size: 17.5px;
+    }
+
+
+    .explore a{
+      font-size: 19px;
+      text-decoration: none;
+      color: #333;
+      background-color: #dcdee0;
+      padding: 10px;
+    }
+    .second-card {
+      width: 50%;
+      height: 500px;
+      background-color: #dcdee0;
+    }
+    .second-card h1 {
+      color: #333;
+    }
+
+    .second-card img {
+      width: 100%;
+      height: auto;
+    }
+  
+    .card-presentation {
+      box-shadow: 10px 18px 35px rgba(0, 0, 0, .5), 0 10px 10px rgba(0, 0, 0, .22);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: translateY(150px);
+      margin: 0 auto;
+      width: 100%;
+      height: 300px;
+      transform: rotateY(150px);
+    }
+    
+    
+    
+    .pushY {
+      margin-top: 350px;
+    }
+    
+    
+    [data-theme="dark"] .card-first-half {
+      box-shadow: 10px 18px 35px rgba(0, 0, 0, .5), 0 10px 10px rgba(0, 0, 0, .22);
+    
+      width: 55%;
+      height: 400px;
+      background-color: #9b9595;
+    }
+    
+    .card-first-half {
+    
+      width: 55%;
+      height: 400px;
+      background-color: #fff;
+    }
+    
+    .card-second-half h1 {
+      text-align: center;
+      font-family: Mukta-Bold;
+      font-size: 25px;
+      color: #333;
+    }
+    
+    .card-first-half h2 {
+      text-align: center;
+      font-family: Mukta-Bold;
+      font-size: 17px;
+      margin: 40px;
+      color: #dcdee0;
+    }
+    .card-second-half {
+      width: 45%;
+      height: 400px;
+      background-color: #dcdee0;
+    
+    }
+    
+    .card-second-half img {
+      width: 100%;
+      height: 400px;
+    
+    }
+    
+    .text-card {
+      transform: translateY(-55px);
+      height: 550px;
+      width: 85%;
+      margin: 0 auto;
+      background-color: #505357;
+    
+      box-shadow: 10px 18px 35px rgba(0, 0, 0, .5), 0 10px 10px rgba(0, 0, 0, .22);
+    }
+    .bg-color-card-presentation {
+      height: 2200px;
+      background-color: #f8f9fa;
+      
+    }
+    .white-bg {
+      background-color: #dcdee0;
+      padding: 10px;
+    }
+    
+    .white-bg h1 {
+      color: #333;
+      font-size: 25px;
+      font-family: Mukta-bold;
+      text-align: center;
+    }
+
+    .bg-color-card-presentation {
+      height: 2200px;
+      background-color: #f8f9fa;
+      
+    }
+    .white-bg {
+      background-color: #dcdee0;
+      padding: 10px;
+    }
+    
+    .white-bg h1 {
+      color: #333;
+      font-size: 25px;
+      font-family: Mukta-bold;
+      text-align: center;
+    }
+    
+    .wear-preview {
+      transform: translateY(75px);
+      margin: 0 auto;
+      width: 100%;
+      height: 1500px;
+    }
+    
+    .card-bg {
+      background-color: #f8f9fa;
+      width: 100%;
+    }
+    
+    [data-theme="dark"] .card-bg {
+      background-color: #212529;
+    
+    }
+    .background-card {
+      transform: translateY(200px);
+
+      width: 100%;
+      height: 600px;
+    
+    }
+    
+    
+    
+    .first-row {
+      transform: translateY(25px);
+      margin: 0 auto;
+      width: 60%;
+      height: 380px;
+      background-color: #505357;
+      box-shadow: 10px 18px 35px rgba(0, 0, 0, .5), 0 10px 10px rgba(0, 0, 0, .22);
+    }
+    
+    .second-row {
+      transform: translateY(50px);
+      margin: 0 auto;
+      width: 60%;
+      height: 380px;
+      background-color: #505357;
+      box-shadow: 10px 18px 35px rgba(0, 0, 0, .5), 0 10px 10px rgba(0, 0, 0, .22);
+    }
+    
+    .third-row {
+      transform: translateY(75px);
+      margin: 0 auto;
+      width: 60%;
+      height: 380px;
+      background-color: #505357;
+      box-shadow: 10px 18px 35px rgba(0, 0, 0, .5), 0 10px 10px rgba(0, 0, 0, .22);
+    
+    
+    }
+    
+    .image-set {
+      width: 100%;
+      height: 80%;
+    
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+    
+    .intro-toppicks {
+      width: 100%;
+      transform: translateY(50px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    
+    .intro-toppicks h1{
+      font-size: 25px;
+      font-family: Mukta-bold;
+    }
+}
+
+
+
+
+
+ -->
